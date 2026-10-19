@@ -29,12 +29,24 @@ public class EvaluadorInventario {
             } else if (costoBase > 50000) {
                 System.out.println("Alerta: Categoria alta");
                 contadorCategoriaAlta++; 
+            }
 
            
             acumuladorCostos += costoBase;
         }
 
-        
+        double costoPromedio = 0;
+        if (cantidadProductos > 0) {
+            costoPromedio = acumuladorCostos / cantidadProductos;
+        }
+
+       4
+        System.out.println("\n========================================");
+        System.out.println("        REPORTE FINAL DE AUDITORÍA      ");
+        System.out.println("========================================");
+        System.out.println("Costo promedio del lote: $" + costoPromedio);
+        System.out.println("Total de productos en categoría alta: " + contadorCategoriaAlta);
+        System.out.println("========================================");
 
         scanner.close();
     }
