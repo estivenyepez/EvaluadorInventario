@@ -40,7 +40,7 @@ public class EvaluadorInventario {
             costoPromedio = acumuladorCostos / cantidadProductos;
         }
 
-       4
+       
         System.out.println("\n========================================");
         System.out.println("        REPORTE FINAL DE AUDITORÍA      ");
         System.out.println("========================================");
