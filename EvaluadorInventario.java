@@ -7,6 +7,33 @@ public class EvaluadorInventario {
         System.out.print("¿Cuantos productos ingresaran al lote?: ");
         int cantidadProductos = scanner.nextInt();
 
+       
+        double acumuladorCostos = 0;
+        int contadorCategoriaAlta = 0;
+
+        
+        for (int i = 0; i < cantidadProductos; i++) {
+            System.out.println("\n--- Producto " + (i + 1) + " ---");
+            System.out.print("Ingrese el nombre del producto: ");
+            scanner.nextLine(); 
+            String nombreProducto = scanner.nextLine();
+
+            System.out.print("Ingrese el costo base del producto: ");
+            double costoBase = scanner.nextDouble();
+
+            
+            if (costoBase < 10000) {
+                System.out.println("Alerta: Categoria baja");
+            } else if (costoBase >= 10000 && costoBase <= 50000) {
+                System.out.println("Alerta: Categoria media");
+            } else if (costoBase > 50000) {
+                System.out.println("Alerta: Categoria alta");
+                contadorCategoriaAlta++; 
+
+           
+            acumuladorCostos += costoBase;
+        }
+
         
 
         scanner.close();
